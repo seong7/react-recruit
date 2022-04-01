@@ -1,5 +1,9 @@
 import React from "react";
 
-export const Test = () => {
-  return <>test</>;
+export interface TestProps {
+  text: string;
+}
+
+export const Test = ({ text }: TestProps) => {
+  return <>{text}</>;
 };
