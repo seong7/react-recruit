@@ -15,6 +15,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "next": "12.1.1",
