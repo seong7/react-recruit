@@ -1,3 +1,4 @@
+import React from 'react';
 import type { AppProps } from 'next/app';
 import { Global } from '@emotion/react';
 import { globalStyles } from '../styles/globalStyles';
