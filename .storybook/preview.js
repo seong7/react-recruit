@@ -1,3 +1,6 @@
+import { Global } from '@emotion/react';
+import { globalStyles } from '../src/styles/globalStyles';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -7,3 +10,12 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <>
+      <Global styles={globalStyles} />
+      <Story />
+    </>
+  ),
+];
