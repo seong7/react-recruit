@@ -1,5 +1,5 @@
 import React from 'react';
-import Styled from './index.styles';
+import { ListHeaderWrapper, PostListTitle } from './index.styles';
 import { Text } from '../../../atoms/Text';
 import { Button } from '../../../atoms/Button';
 import { MenuIcon } from '../../../../assets';
@@ -10,15 +10,15 @@ export interface PostListHeaderProps {}
 export const PostListHeader = ({}: PostListHeaderProps) => {
   const { toggleSideBar } = useSideBarState();
   return (
-    <Styled.ListHeaderWrapper>
+    <ListHeaderWrapper>
       <Button size={'fit'} onClick={toggleSideBar}>
         <MenuIcon height={'17px'} />
       </Button>
-      <Styled.PostListTitle>
+      <PostListTitle>
         <Text as={'h1'} rem={2.4} weight={500}>
           공고 리스트
         </Text>
-      </Styled.PostListTitle>
-    </Styled.ListHeaderWrapper>
+      </PostListTitle>
+    </ListHeaderWrapper>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import Styled from './index.styles';
+import { TextWrapper } from './index.styles';
 
 export interface TextProps {
   as?: 'h1' | 'h2' | 'h3' | 'span';
@@ -14,7 +14,7 @@ export const Text = ({
   weight = 300,
   children,
 }: TextProps) => {
-  const Component = Styled.Text.withComponent(as);
+  const Component = TextWrapper.withComponent(as);
 
   return (
     <Component rem={rem} weight={weight}>

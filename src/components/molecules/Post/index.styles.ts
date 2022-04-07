@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const PostWrapper = styled.div`
+export const PostWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 340px;
@@ -18,14 +18,14 @@ const PostWrapper = styled.div`
   }
 `;
 
-const PostTitle = styled.p`
+export const PostTitle = styled.p`
   font-size: 1.8rem;
   font-weight: 500;
   white-space: pre-wrap;
   margin-bottom: 10px;
 `;
 
-const PostTag = styled.span`
+export const PostTag = styled.span`
   padding: 4px 6px;
   border-radius: 4px;
   background-color: rgb(239, 239, 242);
@@ -36,7 +36,7 @@ const PostTag = styled.span`
   margin-bottom: 10px;
 `;
 
-const PostFooter = styled.div`
+export const PostFooter = styled.div`
   display: flex;
   align-items: center;
   padding: 2px 8px;
@@ -55,10 +55,3 @@ const PostFooter = styled.div`
     padding-left: 10px;
   }
 `;
-
-export default {
-  PostWrapper,
-  PostTitle,
-  PostTag,
-  PostFooter,
-};

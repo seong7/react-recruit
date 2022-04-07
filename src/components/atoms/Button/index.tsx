@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, ReactNode } from 'react';
-import Styled from './index.styles';
+import { ButtonWrapper } from './index.styles';
 
 export interface ButtonProps {
   children: string | ReactNode;
@@ -9,8 +9,8 @@ export interface ButtonProps {
 
 export const Button = ({ children, size = 'fit', onClick }: ButtonProps) => {
   return (
-    <Styled.ButtonWrapper size={size} onClick={onClick}>
+    <ButtonWrapper size={size} onClick={onClick}>
       {children}
-    </Styled.ButtonWrapper>
+    </ButtonWrapper>
   );
 };
