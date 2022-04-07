@@ -1,14 +1,21 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { BaseTemplate } from './';
 import styled from '@emotion/styled';
+import SideBarContextProvider from '../../../context/SideBar/SideBarContext';
 
 export default {
   title: 'Template/BaseTemplate',
   component: BaseTemplate,
+  argTypes: {
+    content: { control: { disable: true } },
+    navigation: { control: { disable: true } },
+  },
 } as ComponentMeta<typeof BaseTemplate>;
 
 const Template: ComponentStory<typeof BaseTemplate> = (args) => (
-  <BaseTemplate {...args} />
+  <SideBarContextProvider>
+    <BaseTemplate {...args} />
+  </SideBarContextProvider>
 );
 
 const StyledNav = styled.nav`

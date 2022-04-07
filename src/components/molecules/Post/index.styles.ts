@@ -11,6 +11,11 @@ const PostWrapper = styled.div`
   transition: box-shadow 0.1s ease-out;
   border-radius: 14px;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 8%),
+      0 1px 4px rgb(0 0 0 / 8%);
+  }
 `;
 
 const PostTitle = styled.p`

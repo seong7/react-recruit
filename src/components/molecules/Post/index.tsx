@@ -1,6 +1,6 @@
 import React from 'react';
 import Styled from './index.styles';
-import { JobPost } from '../../types/common';
+import { JobPost } from '../../../types/common';
 
 export type PostProps = Omit<JobPost, 'id'>;
 
