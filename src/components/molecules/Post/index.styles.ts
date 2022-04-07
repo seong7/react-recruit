@@ -6,6 +6,7 @@ export const PostWrapper = styled.div`
   min-width: 340px;
   height: fit-content;
   padding: 10px;
+  margin-bottom: 10px;
   background-color: #fff;
   box-shadow: 0 0 1px rgb(0 0 0 / 6%), 0 1px 3px rgb(0 0 0 / 24%);
   transition: box-shadow 0.1s ease-out;

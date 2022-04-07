@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useCallback, useState } from 'react';
 
-export type BaseTemplateContextType = {
+export type SideBarContextType = {
   isSideBarOpen: boolean;
   toggleSideBar: () => void;
 };
 
 export const SideBarContext = createContext<
-  BaseTemplateContextType | undefined
+  SideBarContextType | undefined
 >(undefined);
 
 export default function SideBarContextProvider({

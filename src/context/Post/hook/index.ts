@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { SideBarContext } from '../SideBarContext';
+import { PostContext } from '../PostContext';
 
-export const useSideBarState = () => {
-  const state = useContext(SideBarContext);
+export const usePost = () => {
+  const state = useContext(PostContext);
   if (!state)
     throw new Error('State Not Found. Must be called under Provider.');
   return state;

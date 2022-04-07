@@ -1,21 +1,40 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { useEffect } from 'react';
 import { BaseTemplate } from '../components/templates/BaseTemplate';
 import { PostList } from '../components/organisms/PostList';
 import SideBarContextProvider from '../context/SideBar/SideBarContext';
 import { PostNav } from '../components/organisms/PostNav';
+import { postAPI } from '../api/postAPI';
+import { useAsync } from '../hooks/useAsync';
+import { Button } from '../components/atoms/Button';
+import { usePost } from '../context/Post/hook';
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    (async () => {
-      await fetch('/test');
-    })();
-  }, []);
+  const { setPosts } = usePost();
+  const { state, fetchData } = useAsync(
+    {
+      callback: async () => {
+        const posts = await postAPI.getPosts();
+        setPosts(posts.data);
+      },
+    },
+    [],
+  );
 
   return (
     <SideBarContextProvider>
-      <BaseTemplate navigation={<PostNav />} content={<PostList />} />
+      <BaseTemplate
+        navigation={<PostNav />}
+        content={<PostList isLoading={state.status === 'loading'} />}
+      />
+      {/*<Button*/}
+      {/*  onClick={() => {*/}
+      {/*    postAPI.addPost({ title: 'cc', description: 'dd' });*/}
+      {/*    fetchData();*/}
+      {/*  }}*/}
+      {/*>*/}
+      {/*  TESt*/}
+      {/*</Button>*/}
     </SideBarContextProvider>
   );
 };

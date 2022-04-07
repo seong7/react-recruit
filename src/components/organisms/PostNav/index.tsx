@@ -10,8 +10,10 @@ import {
 import { Text } from '../../atoms/Text';
 import { Button } from '../../atoms/Button';
 import { InternalLink } from '../../../routes/InternalLink';
+import { usePost } from '../../../context/Post/hook';
 
 export const PostNav = () => {
+  const { posts } = usePost();
   return (
     <PostNavWrapper>
       <WorkspaceWrapper>
@@ -27,13 +29,15 @@ export const PostNav = () => {
           <Button size={'fit'}>+</Button>
         </NavTitle>
         <NavContentWrapper>
-          <NavContent>
-            <InternalLink href={'/post/1'}>
-              <Text rem={1.5} weight={400}>
-                TEST
-              </Text>
-            </InternalLink>
-          </NavContent>
+          {posts.map((post) => (
+            <NavContent key={post.id}>
+              <InternalLink href={`/post/${post.id}`}>
+                <Text rem={1.5} weight={400}>
+                  {post.title}
+                </Text>
+              </InternalLink>
+            </NavContent>
+          ))}
         </NavContentWrapper>
       </NavWrapper>
     </PostNavWrapper>

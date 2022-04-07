@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { Global } from '@emotion/react';
 import { globalStyles } from '../styles/globalStyles';
 import 'normalize.css';
+import PostContextProvider from '../context/Post/PostContext';
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
   require('../server');
@@ -11,8 +12,10 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Global styles={globalStyles} />
-      <Component {...pageProps} />
+      <PostContextProvider>
+        <Global styles={globalStyles} />
+        <Component {...pageProps} />
+      </PostContextProvider>
     </>
   );
 }
