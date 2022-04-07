@@ -1,11 +1,19 @@
 import React, { ReactNode } from 'react';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 
-export interface InternalLinkProps {
+export interface InternalLinkProps extends LinkProps {
   children: ReactNode;
   href: `/post/${number}`;
 }
 
-export const InternalLink = ({ children, href }: InternalLinkProps) => {
-  return <Link href={href}>{children}</Link>;
+export const InternalLink = ({
+  href,
+  children,
+  ...rest
+}: InternalLinkProps) => {
+  return (
+    <Link href={href} {...rest}>
+      <a>{children}</a>
+    </Link>
+  );
 };

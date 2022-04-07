@@ -11,7 +11,7 @@ export const NavigationWrapper = styled.div<WrappersType>`
   position: fixed;
   transition: left 0.4s cubic-bezier(0.12, 1.01, 0.86, 1) 0s;
   top: 0;
-  left: ${(props) => (props.isNavOpen ? '' : 0)};
+  left: ${(props) => (props.isNavOpen ? 0 : '-100%')};
   width: ${(props) => (props.isNavOpen ? '299px' : '0')};
   height: 100vh;
 `;

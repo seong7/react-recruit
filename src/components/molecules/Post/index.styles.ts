@@ -18,11 +18,8 @@ export const PostWrapper = styled.div`
   }
 `;
 
-export const PostTitle = styled.p`
-  font-size: 1.8rem;
-  font-weight: 500;
+export const PostTitle = styled.div`
   white-space: pre-wrap;
-  margin-bottom: 10px;
 `;
 
 export const PostTag = styled.span`
@@ -33,7 +30,7 @@ export const PostTag = styled.span`
   max-width: 200px;
   font-size: 1.2rem;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin: 10px 0;
 `;
 
 export const PostFooter = styled.div`

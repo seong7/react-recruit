@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { BaseTemplate } from '../components/templates/BaseTemplate';
 import { PostList } from '../components/organisms/PostList';
 import SideBarContextProvider from '../context/SideBar/SideBarContext';
+import { PostNav } from '../components/organisms/PostNav';
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <SideBarContextProvider>
-      <BaseTemplate navigation={<></>} content={<PostList />} />
+      <BaseTemplate navigation={<PostNav />} content={<PostList />} />
     </SideBarContextProvider>
   );
 };

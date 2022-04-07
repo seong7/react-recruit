@@ -5,9 +5,7 @@ import { Button } from '../../../atoms/Button';
 import { MenuIcon } from '../../../../assets';
 import { useSideBarState } from '../../../../context/SideBar/hook';
 
-export interface PostListHeaderProps {}
-
-export const PostListHeader = ({}: PostListHeaderProps) => {
+export const PostListHeader = () => {
   const { toggleSideBar } = useSideBarState();
   return (
     <ListHeaderWrapper>

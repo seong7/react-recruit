@@ -10,7 +10,7 @@ export interface TextProps {
 
 export const Text = ({
   as = 'span',
-  rem = 1.6,
+  rem,
   weight = 300,
   children,
 }: TextProps) => {
