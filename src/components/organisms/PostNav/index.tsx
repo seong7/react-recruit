@@ -11,9 +11,12 @@ import { Text } from '../../atoms/Text';
 import { Button } from '../../atoms/Button';
 import { InternalLink } from '../../../routes/InternalLink';
 import { usePost } from '../../../context/Post/hook';
+import { useInternalRouter } from '../../../routes/internalRouter';
 
 export const PostNav = () => {
   const { posts } = usePost();
+  const { push } = useInternalRouter();
+
   return (
     <PostNavWrapper>
       <WorkspaceWrapper>
@@ -26,7 +29,9 @@ export const PostNav = () => {
           <Text rem={1.5} weight={400}>
             공고 리스트
           </Text>
-          <Button size={'fit'}>+</Button>
+          <Button size={'fit'} onClick={() => push('/create')}>
+            +
+          </Button>
         </NavTitle>
         <NavContentWrapper>
           {posts.map((post) => (

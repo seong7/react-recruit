@@ -5,6 +5,7 @@ export const postAPI = {
   getPosts: () => {
     return API.get<APIRes<JobPost[]>>({ url: '/posts' });
   },
+
   addPost: (post: PostDTO) => {
     return API.post<null, undefined, PostDTO>({
       url: '/posts',

@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Post } from './';
 
 export default {
-  title: 'Components/Molecules/Post',
+  title: 'Molecules/Post',
   component: Post,
 } as ComponentMeta<typeof Post>;
 

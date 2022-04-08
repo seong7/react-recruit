@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react';
 import Link, { LinkProps } from 'next/link';
+import { RoutePath } from './internalRouter';
 
 export interface InternalLinkProps extends LinkProps {
   children: ReactNode;
-  href: `/post/${number}`;
+  href: RoutePath;
 }
 
 export const InternalLink = ({

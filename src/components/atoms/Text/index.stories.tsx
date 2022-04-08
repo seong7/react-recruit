@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text } from './';
 
 export default {
-  title: 'Components/Atoms/Text',
+  title: 'Atoms/Text',
   component: Text,
   argTypes: {
     as: {

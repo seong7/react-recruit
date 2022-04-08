@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import storage from '../storage';
 import { JobPost } from '../types/common';
-import { getDate, timeout, getRandomInt } from '../utills';
+import { getDate, timeout, getRandomIntBetween } from '../utills';
 
 export function handlers() {
   return [rest.get('/posts', getPosts), rest.post('/posts', addPost)];
@@ -11,7 +11,7 @@ const getPosts: Parameters<typeof rest.get>[1] = async (_, res, ctx) => {
   const posts = storage.get('posts');
   if (!posts) storage.set('posts', []);
 
-  await timeout(getRandomInt(500, 3000));
+  await timeout(getRandomIntBetween(500, 3000));
 
   return res(
     ctx.status(200),
