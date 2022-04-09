@@ -12,4 +12,9 @@ export const Basic = Template.bind({});
 
 Basic.args = {
   rows: 1,
+  label: 'Label',
+  error: {
+    errorMessage: 'error message',
+    hasError: false,
+  },
 };

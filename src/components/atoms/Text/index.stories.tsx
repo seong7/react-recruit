@@ -21,4 +21,5 @@ Basic.args = {
   as: 'span',
   rem: 1.6,
   weight: 300,
+  color: 'inherit',
 };

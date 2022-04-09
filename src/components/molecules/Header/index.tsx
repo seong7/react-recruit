@@ -24,7 +24,7 @@ export const Header = ({ headerTitle, onHeaderButtonClick }: HeaderProps) => {
 
   return (
     <HeaderWrapper>
-      <Button size={'fit'} onClick={onHeaderButtonClick}>
+      <Button size={'fit'} color={'secondary'} onClick={onHeaderButtonClick}>
         {icon}
       </Button>
       <Text as={'h1'} rem={2.4} weight={500}>

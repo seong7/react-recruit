@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ButtonProps } from './index';
 
-export const ButtonWrapper = styled.button<Pick<ButtonProps, 'size'>>(
+export const ButtonWrapper = styled.button<Pick<ButtonProps, 'size' | 'color'>>(
   (props) => {
     const baseStyle = {
       display: 'flex',
@@ -19,8 +19,8 @@ export const ButtonWrapper = styled.button<Pick<ButtonProps, 'size'>>(
       width: '',
     };
     switch (props.size) {
-      case 'large':
-        WidthVariant.width = '200px';
+      case 'full':
+        WidthVariant.width = '100%';
         break;
       case 'mid':
         WidthVariant.width = '100px';
@@ -30,6 +30,20 @@ export const ButtonWrapper = styled.button<Pick<ButtonProps, 'size'>>(
         break;
     }
 
-    return { ...baseStyle, ...WidthVariant };
+    const ColorVariant = {
+      color: '',
+      background: '',
+    };
+    switch (props.color) {
+      case 'primary':
+        ColorVariant.color = '#fff';
+        ColorVariant.background = '#3a99ff';
+        break;
+      case 'secondary':
+        ColorVariant.color = 'inherit';
+        ColorVariant.background = '#efefef';
+    }
+
+    return { ...baseStyle, ...WidthVariant, ...ColorVariant };
   },
 );

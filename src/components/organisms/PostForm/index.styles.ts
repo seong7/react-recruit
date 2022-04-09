@@ -12,3 +12,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
+
+export const FormInputWrapper = styled.div`
+  padding-bottom: 20px;
+`;

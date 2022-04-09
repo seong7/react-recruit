@@ -5,20 +5,24 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { InputWrapper, StyledInput, StyledTextArea } from './index.styles';
+import {
+  InputWrapper,
+  StyledInput,
+  StyledTextArea,
+  StyledLabel,
+  StyledErrorMessage,
+} from './index.styles';
+import { Text } from '../Text';
 
 export interface InputProps
   extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   rows?: number;
   label?: string;
+  error?: InputError;
 }
 
-type InputHandle = {
-  value: () => string;
-};
-
 export const Input = forwardRef<InputHandle, InputProps>(
-  ({ rows = 1, label, ...rest }, ref) => {
+  ({ rows = 1, label, error, ...rest }, ref) => {
     const innerRef = useRef<HTMLInputElement | HTMLTextAreaElement | null>(
       null,
     );
@@ -29,8 +33,8 @@ export const Input = forwardRef<InputHandle, InputProps>(
       },
     }));
 
-    return (
-      <InputWrapper>
+    let input = (
+      <InputWrapper error={error}>
         {rows > 1 ? (
           <StyledTextArea
             ref={innerRef as MutableRefObject<HTMLTextAreaElement>}
@@ -45,5 +49,40 @@ export const Input = forwardRef<InputHandle, InputProps>(
         )}
       </InputWrapper>
     );
+
+    if (label !== undefined) {
+      input = (
+        <StyledLabel>
+          <Text rem={1.8} weight={400}>
+            {label}
+          </Text>
+          {input}
+        </StyledLabel>
+      );
+    }
+
+    if (error && error.hasError && error.errorMessage) {
+      input = (
+        <>
+          {input}
+          <StyledErrorMessage>
+            <Text color={'#f00'} rem={1.2} weight={400}>
+              {error.errorMessage}
+            </Text>
+          </StyledErrorMessage>
+        </>
+      );
+    }
+
+    return input;
   },
 );
+
+type InputHandle = {
+  value: () => string;
+};
+
+type InputError = {
+  hasError: boolean;
+  errorMessage?: string;
+};

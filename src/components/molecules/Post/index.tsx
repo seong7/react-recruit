@@ -9,7 +9,7 @@ export const Post = ({ title, created_at, applicants }: PostProps) => {
   return (
     <PostWrapper>
       <PostTitle>
-        <Text rem={1.8} weight={500} as={'h3'}>
+        <Text rem={1.8} weight={400} as={'h3'}>
           {title}
         </Text>
       </PostTitle>

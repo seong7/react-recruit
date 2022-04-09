@@ -21,8 +21,18 @@ export const useValidate = <K extends string>(
       let isPatternValid = option.pattern
         ? isRegex(option.pattern) && value.match(option.pattern) !== null
         : true;
+      let isMaxLengthValid = option.maxLength
+        ? !Array.isArray(value) && value.length < option.maxLength
+        : true;
+      let isMinLengthValid = option.minLength
+        ? !Array.isArray(value) && value.length > option.minLength
+        : true;
 
-      const isValid = isRequiredValid && isPatternValid;
+      const isValid =
+        isRequiredValid &&
+        isPatternValid &&
+        isMaxLengthValid &&
+        isMinLengthValid;
 
       setErrors((prev) => {
         if (isValid) {

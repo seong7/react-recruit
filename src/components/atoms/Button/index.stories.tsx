@@ -7,7 +7,11 @@ export default {
   argTypes: {
     children: { control: { type: 'text' } },
     size: {
-      options: ['large', 'mid', 'fit'],
+      options: ['full', 'mid', 'fit'],
+      control: { type: 'select' },
+    },
+    color: {
+      options: ['primary', 'secondary'],
       control: { type: 'select' },
     },
   },
@@ -19,5 +23,6 @@ export const Basic = Template.bind({});
 
 Basic.args = {
   size: 'mid',
+  color: 'primary',
   children: 'Button',
 };

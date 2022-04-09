@@ -62,6 +62,8 @@ export const useForm = <K extends string>() => {
 export type RegisterOption = {
   required?: boolean;
   pattern?: RegExp;
+  maxLength?: number;
+  minLength?: number;
 };
 
 export type Values<K extends string> = Record<K, string>;
