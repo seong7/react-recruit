@@ -3,7 +3,7 @@ import { isObjectEmpty } from '../../utills';
 import { useValidate } from './useValidate';
 
 export const useForm = <K extends string>() => {
-  const keys: K[] = [];
+  const keysRef = useRef<K[]>([]);
   const valueRef = useRef<Values<K>>({} as Values<K>);
   const optionRef = useRef<Options<K>>({} as Options<K>);
 
@@ -15,7 +15,7 @@ export const useForm = <K extends string>() => {
         ...valueRef.current,
         [uniqueKey]: '',
       };
-      keys.push(uniqueKey);
+      keysRef.current.push(uniqueKey);
     }
     if (optionRef.current[uniqueKey] === undefined) {
       optionRef.current = {
@@ -46,7 +46,7 @@ export const useForm = <K extends string>() => {
         e.preventDefault && e.preventDefault();
       }
 
-      if (isObjectEmpty(errors) && keys.every(validate)) {
+      if (isObjectEmpty(errors) && keysRef.current.every(validate)) {
         callback();
       }
     };

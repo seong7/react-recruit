@@ -6,12 +6,11 @@ import SideBarContextProvider from '../context/SideBar/SideBarContext';
 import { PostNav } from '../components/organisms/PostNav';
 import { postAPI } from '../api/postAPI';
 import { useAsync } from '../hooks/useAsync';
-import { Button } from '../components/atoms/Button';
 import { usePost } from '../context/Post/hook';
 
 const Home: NextPage = () => {
   const { setPosts } = usePost();
-  const { state, fetch } = useAsync(
+  const { state } = useAsync(
     {
       callback: async () => {
         const posts = await postAPI.getPosts();
@@ -27,14 +26,6 @@ const Home: NextPage = () => {
         navigation={<PostNav />}
         content={<PostList isLoading={state.status === 'loading'} />}
       />
-      {/*<Button*/}
-      {/*  onClick={() => {*/}
-      {/*    postAPI.addPost({ title: 'cc', description: 'dd' });*/}
-      {/*    fetchData();*/}
-      {/*  }}*/}
-      {/*>*/}
-      {/*  TESt*/}
-      {/*</Button>*/}
     </SideBarContextProvider>
   );
 };

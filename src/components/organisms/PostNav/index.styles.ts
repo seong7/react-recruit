@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const PostNavWrapper = styled.nav`
+export const PostNavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: linear-gradient(

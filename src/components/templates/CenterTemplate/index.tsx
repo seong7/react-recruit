@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Wrapper, ContentWrapper } from './index.styles';
+import { Wrapper, StyledMain } from './index.styles';
 
 export interface CenterTemplateProps {
   content: ReactNode;
@@ -8,7 +8,7 @@ export interface CenterTemplateProps {
 export const CenterTemplate = ({ content }: CenterTemplateProps) => {
   return (
     <Wrapper>
-      <ContentWrapper>{content}</ContentWrapper>
+      <StyledMain>{content}</StyledMain>
     </Wrapper>
   );
 };

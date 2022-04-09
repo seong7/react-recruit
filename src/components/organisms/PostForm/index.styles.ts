@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const PostFormWrapper = styled.main`
+export const PostFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;

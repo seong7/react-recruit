@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   height: 100vh;
 `;
 
-export const ContentWrapper = styled.div`
+export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   width: 60%;
