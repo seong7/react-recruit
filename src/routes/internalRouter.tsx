@@ -11,8 +11,11 @@ export const useInternalRouter = () => {
       push(path: RoutePath) {
         router.push(path);
       },
+      replace(path: RoutePath) {
+        router.replace(path);
+      },
     };
   }, [router]);
 };
 
-export type RoutePath = `/post/${number}` | '/create';
+export type RoutePath = '/' | `/post/${number}` | '/create';

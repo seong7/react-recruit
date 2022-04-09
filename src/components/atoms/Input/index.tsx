@@ -1,13 +1,16 @@
 import React, {
   forwardRef,
+  InputHTMLAttributes,
   MutableRefObject,
   useImperativeHandle,
   useRef,
 } from 'react';
 import { InputWrapper, StyledInput, StyledTextArea } from './index.styles';
 
-export interface InputProps {
+export interface InputProps
+  extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   rows?: number;
+  label?: string;
 }
 
 type InputHandle = {
@@ -15,7 +18,7 @@ type InputHandle = {
 };
 
 export const Input = forwardRef<InputHandle, InputProps>(
-  ({ rows = 1 }, ref) => {
+  ({ rows = 1, label, ...rest }, ref) => {
     const innerRef = useRef<HTMLInputElement | HTMLTextAreaElement | null>(
       null,
     );
@@ -32,9 +35,13 @@ export const Input = forwardRef<InputHandle, InputProps>(
           <StyledTextArea
             ref={innerRef as MutableRefObject<HTMLTextAreaElement>}
             rows={rows}
+            {...rest}
           />
         ) : (
-          <StyledInput ref={innerRef as MutableRefObject<HTMLInputElement>} />
+          <StyledInput
+            ref={innerRef as MutableRefObject<HTMLInputElement>}
+            {...rest}
+          />
         )}
       </InputWrapper>
     );

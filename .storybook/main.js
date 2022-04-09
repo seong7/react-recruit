@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     'storybook-addon-next',
+    'storybook-addon-next-router',
   ],
   framework: '@storybook/react',
   core: {
@@ -17,7 +18,10 @@ module.exports = {
   },
   typescript: { reactDocgen: false },
   webpackFinal: async (config) => {
-    console.log('cjkcj', resolvePath(''));
+    config.module.rules.unshift({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     return {
       ...config,

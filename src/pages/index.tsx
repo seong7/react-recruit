@@ -11,7 +11,7 @@ import { usePost } from '../context/Post/hook';
 
 const Home: NextPage = () => {
   const { setPosts } = usePost();
-  const { state, fetchData } = useAsync(
+  const { state, fetch } = useAsync(
     {
       callback: async () => {
         const posts = await postAPI.getPosts();

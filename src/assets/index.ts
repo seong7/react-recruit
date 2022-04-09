@@ -1,5 +1,3 @@
-import MenuIcon from './svg/menu.svg';
-import LoaderIcon from './svg/loader.svg';
-import ArrowLeftIcon from './svg/arrow_left.svg';
-
-export { MenuIcon, LoaderIcon, ArrowLeftIcon };
+export { MenuIcon } from './svg/MenuIcon';
+export { LoaderIcon } from './svg/LoaderIcon';
+export { ArrowLeftIcon } from './svg/ArrowLeftIcon';

@@ -1,15 +1,19 @@
-import React, { MouseEventHandler, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import { ButtonWrapper } from './index.styles';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string | ReactNode;
   size?: 'large' | 'mid' | 'fit';
-  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Button = ({ children, size = 'fit', onClick }: ButtonProps) => {
+export const Button = ({
+  children,
+  size = 'fit',
+  onClick,
+  ...rest
+}: ButtonProps) => {
   return (
-    <ButtonWrapper size={size} onClick={onClick}>
+    <ButtonWrapper size={size} onClick={onClick} {...rest}>
       {children}
     </ButtonWrapper>
   );

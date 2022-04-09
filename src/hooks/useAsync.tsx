@@ -11,7 +11,7 @@ export function useAsync<R>(
     data: null,
   });
 
-  const fetchData = async () => {
+  const fetch = async () => {
     dispatch({ type: 'LOADING', data: null });
 
     try {
@@ -23,10 +23,10 @@ export function useAsync<R>(
   };
 
   useEffect(() => {
-    if (deps !== undefined || !disableRunOnDepsChange) fetchData();
+    if (deps !== undefined && !disableRunOnDepsChange) fetch();
   }, deps ?? []);
 
-  return { state, fetchData };
+  return { state, fetch };
 }
 
 const getReducer =
