@@ -11,7 +11,7 @@ const getPosts: Parameters<typeof rest.get>[1] = async (_, res, ctx) => {
   const posts = storage.get('posts');
   if (!posts) storage.set('posts', []);
 
-  await timeout(getRandomIntBetween(500, 3000));
+  await timeout(getRandomIntBetween(500, 1000));
 
   return res(
     ctx.status(200),

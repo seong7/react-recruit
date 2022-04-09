@@ -10,5 +10,5 @@ export const Wrapper = styled.div`
 export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 40%;
 `;

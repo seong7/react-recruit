@@ -24,24 +24,28 @@ export const PostNav = () => {
           My Workspace
         </Text>
       </WorkspaceWrapper>
+
       <NavWrapper>
-        <NavTitle>
-          <Text rem={1.5} weight={400}>
-            공고 리스트
-          </Text>
-          <Button size={'fit'} onClick={() => push('/create')}>
-            +
-          </Button>
-        </NavTitle>
+        <InternalLink href={'/'}>
+          <NavTitle>
+            <Text rem={1.5} weight={400}>
+              공고 리스트
+            </Text>
+            <Button size={'fit'} onClick={() => push('/create')}>
+              +
+            </Button>
+          </NavTitle>
+        </InternalLink>
+
         <NavContentWrapper>
           {posts.map((post) => (
-            <NavContent key={post.id}>
-              <InternalLink href={`/post/${post.id}`}>
+            <InternalLink key={post.id} href={`/post/${post.id}`}>
+              <NavContent>
                 <Text rem={1.5} weight={400}>
                   {post.title}
                 </Text>
-              </InternalLink>
-            </NavContent>
+              </NavContent>
+            </InternalLink>
           ))}
         </NavContentWrapper>
       </NavWrapper>

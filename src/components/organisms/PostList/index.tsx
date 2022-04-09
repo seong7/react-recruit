@@ -6,6 +6,7 @@ import { FullCenterWrapper } from '../../../styles/FullCenterWrapper';
 import { usePost } from '../../../context/Post/hook';
 import { Post } from '../../molecules/Post';
 import { useSideBarState } from '../../../context/SideBar/hook';
+import { InternalLink } from '../../../routes/InternalLink';
 
 export interface PostListProps {
   isLoading: boolean;
@@ -24,13 +25,14 @@ export const PostList = ({ isLoading }: PostListProps) => {
         </FullCenterWrapper>
       ) : (
         posts.map((post) => (
-          <Post
-            key={post.id}
-            title={post.title}
-            created_at={post.created_at}
-            applicants={post.applicants}
-            description={post.description}
-          />
+          <InternalLink key={post.id} href={`/post/${post.id}`}>
+            <Post
+              title={post.title}
+              created_at={post.created_at}
+              applicants={post.applicants}
+              description={post.description}
+            />
+          </InternalLink>
         ))
       )}
     </Wrapper>

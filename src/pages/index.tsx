@@ -10,6 +10,7 @@ import { usePost } from '../context/Post/hook';
 
 const Home: NextPage = () => {
   const { setPosts } = usePost();
+
   const { state } = useAsync(
     {
       callback: async () => {

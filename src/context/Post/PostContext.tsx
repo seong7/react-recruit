@@ -4,6 +4,7 @@ import { JobPost } from '../../types/common';
 export type PostContextType = {
   posts: JobPost[];
   setPosts: (newPosts: JobPost[]) => void;
+  getPostById: (id: JobPost['id']) => JobPost | undefined;
 };
 
 export const PostContext = createContext<PostContextType | undefined>(
@@ -21,11 +22,19 @@ export default function PostContextProvider({
     _setPosts(newPosts);
   }, []);
 
+  const getPostById = useCallback(
+    (id: JobPost['id']) => {
+      return posts.find((post) => post.id === id);
+    },
+    [posts],
+  );
+
   return (
     <PostContext.Provider
       value={{
         posts,
         setPosts,
+        getPostById,
       }}
     >
       {children}

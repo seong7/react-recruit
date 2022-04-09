@@ -5,6 +5,7 @@ export const useInternalRouter = () => {
   const router = useRouter();
   return useMemo(() => {
     return {
+      ...router,
       goBack() {
         router.back();
       },

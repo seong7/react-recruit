@@ -6,7 +6,7 @@ import { HeaderWrapper } from './index.styles';
 
 export interface HeaderProps {
   onHeaderButtonClick: () => void;
-  headerTitle: '공고 리스트' | '새 공고 작성';
+  headerTitle: '공고 리스트' | '새 공고 작성' | '공고 보기';
 }
 
 export const Header = ({ headerTitle, onHeaderButtonClick }: HeaderProps) => {
@@ -16,6 +16,9 @@ export const Header = ({ headerTitle, onHeaderButtonClick }: HeaderProps) => {
       icon = <MenuIcon height={'17px'} />;
       break;
     case '새 공고 작성':
+      icon = <ArrowLeftIcon />;
+      break;
+    case '공고 보기':
       icon = <ArrowLeftIcon />;
       break;
     default:

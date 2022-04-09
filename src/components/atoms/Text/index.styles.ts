@@ -7,4 +7,5 @@ export const TextWrapper = styled.span<
   font-size: ${(props) => (props.rem ? `${props.rem}rem` : 'inherit')};
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
+  white-space: pre-line;
 `;
