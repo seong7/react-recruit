@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrapper } from './index.styles';
-import { Header } from '../../molecules/Header';
+import { Header } from '../Header';
 import { LoaderIcon } from '../../../assets';
 import { FullCenterWrapper } from '../../../styles/FullCenterWrapper';
 import { usePost } from '../../../context/Post/hook';

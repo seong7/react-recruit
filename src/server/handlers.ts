@@ -4,7 +4,11 @@ import { JobPost } from '../types/common';
 import { getDate, timeout, getRandomIntBetween } from '../utills';
 
 export function handlers() {
-  return [rest.get('/posts', getPosts), rest.post('/posts', addPost)];
+  return [
+    rest.get('/posts', getPosts),
+    rest.post('/posts', addPost),
+    rest.delete('/posts', deletePost),
+  ];
 }
 
 const getPosts: Parameters<typeof rest.get>[1] = async (_, res, ctx) => {
@@ -35,6 +39,17 @@ const addPost: Parameters<typeof rest.post>[1] = (req, res, ctx) => {
     posts.push(newPost);
     storage.set('posts', posts);
   }
+
+  return res(ctx.status(200));
+};
+
+const deletePost: Parameters<typeof rest.delete>[1] = (req, res, ctx) => {
+  const postId = req.url.searchParams.get('id');
+
+  const posts: JobPost[] = storage.get('posts') ?? [];
+  const deleteIndex = posts.findIndex((post) => post.id === Number(postId));
+  posts.splice(deleteIndex, 1);
+  storage.set('posts', posts);
 
   return res(ctx.status(200));
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { PostFormWrapper, Form, FormInputWrapper } from './index.styles';
-import { Header } from '../../molecules/Header';
+import { Header } from '../Header';
 import { useInternalRouter } from '../../../routes/internalRouter';
 import { useForm } from '../../../hooks/useForm';
 import { useAsync } from '../../../hooks/useAsync';

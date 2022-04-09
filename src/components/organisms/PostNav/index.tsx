@@ -26,16 +26,14 @@ export const PostNav = () => {
       </WorkspaceWrapper>
 
       <NavWrapper>
-        <InternalLink href={'/'}>
-          <NavTitle>
-            <Text rem={1.5} weight={400}>
-              공고 리스트
-            </Text>
-            <Button size={'fit'} onClick={() => push('/create')}>
-              +
-            </Button>
-          </NavTitle>
-        </InternalLink>
+        <NavTitle>
+          <Text rem={1.5} weight={400}>
+            공고 리스트
+          </Text>
+          <Button size={'fit'} onClick={() => push('/create')}>
+            +
+          </Button>
+        </NavTitle>
 
         <NavContentWrapper>
           {posts.map((post) => (

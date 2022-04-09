@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Wrapper, PostDetailWrapper, FieldWrapper } from './index.styles';
 import { PostTag } from '../../molecules/Post/index.styles';
-import { Header } from '../../molecules/Header';
+import { Header } from '../Header';
 import { useInternalRouter } from '../../../routes/internalRouter';
 import { usePost } from '../../../context/Post/hook';
 import { Text } from '../../atoms/Text';

@@ -12,6 +12,15 @@ export const postAPI = {
       body: post,
     });
   },
+
+  deletePost: (postId: JobPost['id']) => {
+    return API.delete({
+      url: `/posts`,
+      query: {
+        id: postId,
+      },
+    });
+  },
 };
 
 export type APIRes<R> = {
