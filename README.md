@@ -4,7 +4,7 @@
 
 - `state managment` without using 3rd party libraries.
 
-- reusable `custom hooks`.
+- reusable [`custom hooks`](./src/hooks).
 
 - `Atomic design`.
 
