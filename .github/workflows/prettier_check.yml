@@ -25,5 +25,5 @@ jobs:
       - name: Run Prettier Check
         run: |
           yarn add prettier --prefix ./
-          yarn add style:check --prefix ./
+          yarn style:check --prefix ./
         working-directory: ${{ env.working-directory }}
