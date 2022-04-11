@@ -29,7 +29,7 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn build
-          yarn dev & npx wait-on http://localhost:3001
+          yarn dev & npx wait-on http://localhost:3000
         # 추후 test command 추가
         working-directory: ${{ env.working-directory }}
 

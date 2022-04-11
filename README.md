@@ -18,7 +18,7 @@
 # install dependencies
 yarn
 
-# start dev
+# start dev on port `3000`
 yarn dev
 
 # storybook
