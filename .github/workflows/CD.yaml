@@ -51,8 +51,8 @@ jobs:
           # ssh: # optional
           # List of tags
           tags: |
-            ghcr.io/makinarocks/react-recruit:latest
-            ghcr.io/makinarocks/react-recruit:${{ steps.short-sha.outputs.sha }}
+            ghcr.io/seong7/react-recruit:latest
+            ghcr.io/seong7/react-recruit:${{ steps.short-sha.outputs.sha }}
           # GitHub Token used to authenticate against a repository for Git context
           # github-token: # optional, default is ${{ github.token }}
 
