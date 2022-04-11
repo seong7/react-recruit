@@ -52,4 +52,4 @@ jobs:
           # Build's context is the set of files located in the specified PATH or URL
           context: ${{ env.working-directory }}
           # Path to the Dockerfile
-          file: ${{ env.working-directory }}/docker/Dockerfile
+          file: ${{ env.working-directory }}/Dockerfile
