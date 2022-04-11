@@ -5,9 +5,9 @@ export type SideBarContextType = {
   toggleSideBar: () => void;
 };
 
-export const SideBarContext = createContext<
-  SideBarContextType | undefined
->(undefined);
+export const SideBarContext = createContext<SideBarContextType | undefined>(
+  undefined,
+);
 
 export default function SideBarContextProvider({
   children,

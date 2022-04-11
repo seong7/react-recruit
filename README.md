@@ -12,7 +12,6 @@
 
 - [`storybook`](https://storybook.js.org) for component documentation
 
-
 ### start
 
 ```docker
@@ -23,5 +22,5 @@ yarn
 yarn dev
 
 # storybook
-yarn storybook 
+yarn storybook
 ```
