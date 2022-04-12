@@ -31,7 +31,7 @@ jobs:
           # Username used to log against the Docker registry
           username: ${{ github.repository_owner }}
           # Password or personal access token used to log against the Docker registry
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.CR_PAT }}
           # Log out from the Docker registry at the end of a job
       #        logout: # optional, default is true
 
@@ -60,11 +60,11 @@ jobs:
           # GitHub Token used to authenticate against a repository for Git context
 #           github-token: # optional, default is ${{ github.token }}
 
-      - name: Install yq
-        run: |
-          wget https://github.com/mikefarah/yq/releases/download/v4.4.1/yq_linux_amd64 -O ./yq
-          chmod +x ./yq
-
+#      - name: Install yq
+#        run: |
+#          wget https://github.com/mikefarah/yq/releases/download/v4.4.1/yq_linux_amd64 -O ./yq
+#          chmod +x ./yq
+#
 #      - name: Change image tag on values.yaml
 #        run: |
 #          cat ./helm/mynode/values.yaml | ./yq e '.image.tag="${{ steps.short-sha.outputs.sha }}"' - | tee ./helm/mynode/values.yaml.tmp
