@@ -1,6 +1,10 @@
 name: Deploy
 
 on:
+  push:
+    branches:
+      - main
+      - develop
   pull_request:
     branches:
       - main
@@ -40,7 +44,7 @@ jobs:
       - name: Docker Build and Push
         uses: docker/build-push-action@v2.6.1
         with:
-          push: false
+          push: true
           # List of build-time variables
           # build-args: # optional
           # Build's context is the set of files located in the specified PATH or URL
@@ -56,11 +60,11 @@ jobs:
           # GitHub Token used to authenticate against a repository for Git context
 #           github-token: # optional, default is ${{ github.token }}
 
-      - name: Install yq
-        run: |
-          wget https://github.com/mikefarah/yq/releases/download/v4.4.1/yq_linux_amd64 -O ./yq
-          chmod +x ./yq
-#
+#      - name: Install yq
+#        run: |
+#          wget https://github.com/mikefarah/yq/releases/download/v4.4.1/yq_linux_amd64 -O ./yq
+#          chmod +x ./yq
+
 #      - name: Change image tag on values.yaml
 #        run: |
 #          cat ./helm/mynode/values.yaml | ./yq e '.image.tag="${{ steps.short-sha.outputs.sha }}"' - | tee ./helm/mynode/values.yaml.tmp
