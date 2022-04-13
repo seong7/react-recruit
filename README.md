@@ -6,7 +6,7 @@
 
 - `Atomic design`.
 
-- mocked service worker [`msw`](https://mswjs.io/)
+- Mocked Service Worker [`msw`](https://mswjs.io/)
 
 - [`storybook`](https://storybook.js.org) for component documentation
 
@@ -15,7 +15,8 @@
 - TypeScript
 - Next.js
 - Emotion
-- Storybook
+- [`Storybook`](https://storybook.js.org)
+- [`MSW`](https://mswjs.io/)
 
 ### start
 
