@@ -15,8 +15,8 @@
 - TypeScript
 - Next.js
 - Emotion
-- [`Storybook`](https://storybook.js.org)
-- [`MSW`](https://mswjs.io/)
+- Storybook
+- MSW
 
 ### start
 
