@@ -1,7 +1,5 @@
 ## React Recruitment
 
----
-
 - `state managment` without using 3rd party libraries.
 
 - reusable [`custom hooks`](./src/hooks).
@@ -11,6 +9,13 @@
 - mocked service worker [`msw`](https://mswjs.io/)
 
 - [`storybook`](https://storybook.js.org) for component documentation
+
+### Tech Stack
+
+- TypeScript
+- Next.js
+- Emotion
+- Storybook
 
 ### start
 
