@@ -8,7 +8,7 @@
 
 - `Atomic design`.
 
-- uses mocked service worker [`msw`](https://mswjs.io/)
+- mocked service worker [`msw`](https://mswjs.io/)
 
 - [`storybook`](https://storybook.js.org) for component documentation
 
