@@ -12,7 +12,7 @@ const remove = (key: StorageKeys) => {
   localStorage.removeItem(key);
 };
 
-type StorageKeys = 'posts';
+type StorageKeys = 'react-recruit-posts';
 
 export default {
   set,
