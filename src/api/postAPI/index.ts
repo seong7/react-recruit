@@ -21,6 +21,15 @@ export const postAPI = {
       },
     });
   },
+
+  searchPosts: (keyword: string) => {
+    return API.get<APIRes<JobPost[]>, { keyword: string }>({
+      url: '/posts/search',
+      query: {
+        keyword: encodeURIComponent(keyword),
+      },
+    });
+  },
 };
 
 export type APIRes<R> = {
