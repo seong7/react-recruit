@@ -42,6 +42,7 @@ export const PostForm = () => {
               required: true,
               pattern: AppRegExp.custom2,
               maxLength: 15,
+              minLength: 3,
             })}
             error={{
               hasError: errors.title,
