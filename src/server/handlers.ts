@@ -2,6 +2,7 @@ import { rest } from 'msw';
 import storage from '../storage';
 import { JobPost } from '../types/common';
 import { getDate, timeout, getRandomIntBetween } from '../utills';
+import { getMockPosts } from './mock-data';
 
 export function handlers() {
   return [
@@ -13,15 +14,18 @@ export function handlers() {
 }
 
 const getPosts: Parameters<typeof rest.get>[1] = async (_, res, ctx) => {
-  const posts = storage.get('posts');
-  if (!posts) storage.set('posts', []);
+  let posts = storage.get('posts');
+  if (!posts) {
+    storage.set('posts', getMockPosts());
+    posts = storage.get('posts');
+  }
 
   await timeout(getRandomIntBetween(500, 1000));
 
   return res(
     ctx.status(200),
     ctx.json({
-      data: posts ?? [],
+      data: posts,
     }),
   );
 };
