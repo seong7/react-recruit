@@ -8,6 +8,7 @@ export function handlers() {
     rest.get('/posts', getPosts),
     rest.post('/posts', addPost),
     rest.delete('/posts', deletePost),
+    rest.get('/posts/search', searchPosts),
   ];
 }
 
@@ -52,4 +53,18 @@ const deletePost: Parameters<typeof rest.delete>[1] = (req, res, ctx) => {
   storage.set('posts', posts);
 
   return res(ctx.status(200));
+};
+
+const searchPosts: Parameters<typeof rest.get>[1] = async (req, res, ctx) => {
+  const keyword = decodeURIComponent(req.url.searchParams.get('keyword') ?? '');
+  const posts: JobPost[] = storage.get('posts') ?? [];
+
+  return res(
+    ctx.status(200),
+    ctx.json({
+      data: posts.filter((post) =>
+        post.title.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()),
+      ),
+    }),
+  );
 };

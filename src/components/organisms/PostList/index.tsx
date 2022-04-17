@@ -7,6 +7,7 @@ import { usePost } from '../../../context/Post/hook';
 import { Post } from '../../molecules/Post';
 import { useSideBarState } from '../../../context/SideBar/hook';
 import { InternalLink } from '../../../routes/InternalLink';
+import { PostSearch } from './PostSearch';
 
 export interface PostListProps {
   isLoading: boolean;
@@ -18,6 +19,8 @@ export const PostList = ({ isLoading }: PostListProps) => {
   return (
     <Wrapper>
       <Header headerTitle={'공고 리스트'} onHeaderButtonClick={toggleSideBar} />
+
+      <PostSearch />
 
       {isLoading ? (
         <FullCenterWrapper>
