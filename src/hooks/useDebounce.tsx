@@ -27,21 +27,6 @@ export const useDebounce = <R, P>({
     [timeout],
   );
 
-  /* example - Debounce for first call */
-  // const createOnceCallForFirst = <R, P>(callFn: (props: P) => Promise<R>) => {
-  //   let isCalled = false;
-  //   let answer;
-  //
-  //   return async (props: P): Promise<R | undefined> => {
-  //     if (!isCalled) {
-  //       isCalled = true;
-  //       answer = await callFn(props);
-  //       isCalled = false;
-  //       return answer;
-  //     }
-  //   };
-  // };
-
   return {
     debounceCaller: createDebounce(callback),
   };
