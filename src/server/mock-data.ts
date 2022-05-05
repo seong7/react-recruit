@@ -3,14 +3,14 @@ import { getDate } from '../utills';
 
 export const getMockPosts = (): JobPost[] => [
   {
-    id: Date.now(),
+    id: 1,
     title: 'Junior Frontend 개발자',
     description: desc,
     applicants: 0,
     created_at: getDate(),
   },
   {
-    id: Date.now(),
+    id: 2,
     title: 'Junior Backend 개발자',
     description: desc,
     applicants: 0,
